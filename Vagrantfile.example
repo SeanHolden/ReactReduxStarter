@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANT_CONFIG_VERSION = '2'
+
+Vagrant.configure(VAGRANT_CONFIG_VERSION) do |config|
+  config.vm.box = 'bento/centos-7.2'
+  config.vm.network 'forwarded_port', guest: 8080, host: 8080
+
+  config.vm.provision "chef_solo" do |chef|
+    chef.version = '12.17.44'
+    chef.cookbooks_path = '/chef/cookbooks'
+    chef.roles_path = '/chef/roles'
+    chef.add_role('npm')
+    chef.json = {
+      'git' => {
+        'email' => 'johndoe@test.com',
+        'name' => 'John Doe'
+      }
+    }
+  end
+end
+
