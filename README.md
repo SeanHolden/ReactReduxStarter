@@ -1,1 +1,3 @@
-This is just a starter tutorial I followed to help me learn React/Redux
+# React and Redux Simple Starter
+
+Tutorial I'm following to learn React

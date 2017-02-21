@@ -1,3 +1,4 @@
 *~
 Vagrantfile
 .vagrant
+node_modules

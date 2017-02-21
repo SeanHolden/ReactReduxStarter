@@ -20,4 +20,3 @@ Vagrant.configure(VAGRANT_CONFIG_VERSION) do |config|
     }
   end
 end
-
